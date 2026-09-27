@@ -96,3 +96,42 @@ jobs:
           import android.webkit.WebSettings;
           import android.webkit.WebView;
           import android.webkit.WebView
+          public class MainActivity extends Activity {
+              @Override
+              protected void onCreate(Bundle savedInstanceState) {
+                  super.onCreate(savedInstanceState);
+
+                  WebView webView = new WebView(this);
+                  webView.setWebViewClient(new WebViewClient());
+
+                  WebSettings settings = webView.getSettings();
+                  settings.setJavaScriptEnabled(true);
+                  settings.setDomStorageEnabled(true);
+
+                  webView.loadUrl("https://krishneschopra.github.io/KRISHNA-ELECTRICALS/");
+
+                  setContentView(webView);
+              }
+          }
+          EOF
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.7"
+
+      - name: Build APK
+        working-directory: android
+        run: gradle assembleDebug
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: Krishna-Electricals-APK
+          path: android/app/build/outputs/apk/debug/app-debug.apk
