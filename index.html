@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101820">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="logo.png">
+<title>Krishna Electricals</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <img class="logo" src="logo.png" alt="Krishna Electricals logo"><div class="brand">⚡ KRISHNA ELECTRICALS</div>
+  <p>Reliable Electrical Service • 15-Hour Service</p>
+  <a class="website" href="https://www.google.com/searchviewer/10?client=ms-android-samsung-gj-rev1&hs=5Ehq&sca_esv=f490e9746bfcf51c&hl=en-GB&cs=1&output=search&svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVdzM05ITnplbXh1GAo" target="_blank">🌐 Main Website</a>
+</header>
+
+<main>
+  <section class="quick">
+    <a href="#electricians">👷 Electricians</a>
+    <a href="#complaint">📝 Complaint</a>
+    <a href="#videos">🎥 Work Videos</a>
+    <a href="#top10">⭐ Top 10</a>
+  </section>
+
+  <section id="top10">
+    <h2>⭐ Top 10 Electricians</h2>
+    <div id="topList" class="grid"></div>
+  </section>
+
+  <section id="electricians">
+    <h2>👷 Our Electricians</h2>
+    <div id="allList" class="grid"></div>
+  </section>
+
+  <section id="complaint" class="panel">
+    <h2>📝 Complaint / Electrical Problem</h2>
+    <p>Apni problem yahan likhein. Demo version complaint ko isi device par save karta hai.</p>
+    <form id="complaintForm">
+      <input id="name" required placeholder="Your name">
+      <input id="phone" required type="tel" placeholder="Mobile number">
+      <textarea id="problem" required placeholder="Apni electrical problem likhein..."></textarea>
+      <button type="submit">Submit Complaint</button>
+    </form>
+    <div id="success"></div>
+  </section>
+
+  <section id="videos">
+    <h2>🎥 Our Work</h2>
+    <div class="video-grid">
+      <div class="video-placeholder">Work Video 1<br><small>Add your video here</small></div>
+      <div class="video-placeholder">Work Video 2<br><small>Add your video here</small></div>
+      <div class="video-placeholder">Work Video 3<br><small>Add your video here</small></div>
+    </div>
+  </section>
+</main>
+
+<footer>© 2026 Krishna Electricals • 15-Hour Electrical Service</footer>
+<script src="app.js"></script>
+<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("service-worker.js");</script>
+</body>
+</html>
